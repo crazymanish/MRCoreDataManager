@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MRCoreDataManager: 115f2d8635aa1b36c9c93850acbb8815b5267109
+  MRCoreDataManager: e149c8c12b07aeaaa412af1086cea7bd63b159bb
 
 PODFILE CHECKSUM: 0b1106b5af45ae6b4fd9fa962acb4ce26609e0ca
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "summary": "A framework to easily perform coredata operations. i.e Add, Fetch, Update, Delete.",
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "authors": "Manish Rathi - manishrathi19902013@gmail.com",
   "license": {

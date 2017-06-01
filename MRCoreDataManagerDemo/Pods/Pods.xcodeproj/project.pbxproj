@@ -309,40 +309,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		08B166F90DBFF165258D1644EDE49802 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D688EE801CA358164CADAF57A04EC7A5 /* MRCoreDataManager.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MRCoreDataManager/MRCoreDataManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MRCoreDataManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MRCoreDataManager/MRCoreDataManager.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MRCoreDataManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -512,7 +478,7 @@
 			};
 			name = Debug;
 		};
-		E1D826788620BAC8CDEDB0AC626943CB /* Debug */ = {
+		8469CF61885BB6F13F5D43C1B96A33C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D688EE801CA358164CADAF57A04EC7A5 /* MRCoreDataManager.xcconfig */;
 			buildSettings = {
@@ -531,7 +497,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MRCoreDataManager/MRCoreDataManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MRCoreDataManager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MRCoreDataManager/MRCoreDataManager.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -546,6 +512,40 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		93F199B8BC24CB6D5533AAF3D1B4ECB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D688EE801CA358164CADAF57A04EC7A5 /* MRCoreDataManager.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MRCoreDataManager/MRCoreDataManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MRCoreDataManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MRCoreDataManager/MRCoreDataManager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MRCoreDataManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -571,8 +571,8 @@
 		9FCA8F79245A9DE650780A9C1840DC48 /* Build configuration list for PBXNativeTarget "MRCoreDataManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1D826788620BAC8CDEDB0AC626943CB /* Debug */,
-				08B166F90DBFF165258D1644EDE49802 /* Release */,
+				8469CF61885BB6F13F5D43C1B96A33C3 /* Debug */,
+				93F199B8BC24CB6D5533AAF3D1B4ECB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

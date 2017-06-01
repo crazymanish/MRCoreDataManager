@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import CoreData
+import MRCoreDataManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // MARK: - Core Data stack
+    var persistentContainer: NSPersistentContainer {
+        let container = NSPersistentContainer(name: "MRCoreDataManagerDemo")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        MRCoreDataManager.sharedInstance.initialize(persistentContainer: persistentContainer)
         return true
     }
 
@@ -42,4 +54,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
 }
-

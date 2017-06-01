@@ -27,26 +27,96 @@
 import Foundation
 import CoreData
 
-open class MRCoreDataManager {
-    let persistentContainerName = "MRCoreDataManagerDemo"
+public class MRCoreDataManager {
+    /**
+     *  Get the singleton object of MRCoreDataManager.
+     *
+     *  @return sharedInstance
+     *
+     *  @since 1.0.0
+     */
+    public static let sharedInstance = MRCoreDataManager()
     
-    // MARK: - Core Data stack
-    var persistentContainer: NSPersistentContainer {
-        let container = NSPersistentContainer(name: persistentContainerName)
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
+    /**
+     *  Hold CoreData Stack's persistentContainer
+     *
+     *  @note This is read-Only.
+     *
+     *  @since 1.0.0
+     */
+    public private(set) var persistentContainer: NSPersistentContainer?
+
+    /**
+     *  Call this API to initialize CoreData Stack. Normally should be called only once.
+     *
+     *  @note AppDelegate didFinish method is the best place to call this API.
+     *
+     *  @since 1.0.0
+     */
+    public func initialize(persistentContainer: NSPersistentContainer) {
+        self.persistentContainer = persistentContainer
+    }
+
+    /**
+     *  Add EntityData with EntityName. User has option to instant save NSManagedObjectContext.
+     *
+     *  @note default value for 'instantSave' is false.
+     *
+     *  @since 1.0.0
+     */
+    public func addDataForEntityName(_ entityName: String, entityData: [String: Any], instantSave: Bool = false) -> NSManagedObject {
+     
+        //TODO: Implement ADD Functioanlity
+        return NSManagedObject() // This is temp line, just to avoid compile error.
     }
     
-    // MARK: - Core Data Saving support
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+    /**
+     *  Get EntityData with EntityName.
+     *
+     *  @since 1.0.0
+     */
+    public func dataForEntityName(_ entityName: String, predicate: NSPredicate? = nil) -> [NSManagedObject] {
+        
+        //TODO: Implement GET Functioanlity
+        return []   // This is temp line, just to avoid compile error.
+    }
+    
+    /**
+     *  Update NSManagedObject data. User has option to instant save NSManagedObjectContext.
+     *
+     *  @note default value for 'instantSave' is false.
+     *
+     *  @since 1.0.0
+     */
+    public func updateManagedObject(_ object: NSManagedObject, entityData: [String: Any], instantSave: Bool = false) -> Bool {
+        
+        //TODO: Implement UPDATE Functioanlity
+        return true   // This is temp line, just to avoid compile error.
+    }
+
+    /**
+     *  Delete NSManagedObject. User has option to instant save NSManagedObjectContext.
+     *
+     *  @note default value for 'instantSave' is false.
+     *
+     *  @since 1.0.0
+     */
+    public func deleteManagedObject(_ object: NSManagedObject, instantSave: Bool = false) -> Bool {
+        
+        //TODO: Implement DELETE Functioanlity
+        return true   // This is temp line, just to avoid compile error.
+    }
+    
+    /**
+     *  Core Data Saving support.
+     *
+     *  @since 1.0.0
+     */
+    public func saveContext () {
+        let context = persistentContainer?.viewContext
+        if context?.hasChanges ?? false {
             do {
-                try context.save()
+                try context?.save()
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")

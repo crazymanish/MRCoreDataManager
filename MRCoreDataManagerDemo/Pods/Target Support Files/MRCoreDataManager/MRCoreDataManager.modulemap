@@ -1,0 +1,6 @@
+framework module MRCoreDataManager {
+  umbrella header "MRCoreDataManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

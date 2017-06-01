@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67A582116897EAF1B30F12E4 /* Pods_MRCoreDataManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8A5D7CE963B5F7F389BC0B /* Pods_MRCoreDataManagerDemo.framework */; };
 		8454DA1D1EDFEBD000162E21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DA1C1EDFEBD000162E21 /* AppDelegate.swift */; };
 		8454DA1F1EDFEBD000162E21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DA1E1EDFEBD000162E21 /* ViewController.swift */; };
 		8454DA221EDFEBD000162E21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DA201EDFEBD000162E21 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BA981DDFF10B96F425925F7 /* Pods-MRCoreDataManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCoreDataManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRCoreDataManagerDemo/Pods-MRCoreDataManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8454DA191EDFEBD000162E21 /* MRCoreDataManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRCoreDataManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454DA1C1EDFEBD000162E21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8454DA1E1EDFEBD000162E21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		8454DA261EDFEBD000162E21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8454DA291EDFEBD000162E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8454DA2B1EDFEBD000162E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2736AC7673FC6442B918CA0 /* Pods-MRCoreDataManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCoreDataManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRCoreDataManagerDemo/Pods-MRCoreDataManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DE8A5D7CE963B5F7F389BC0B /* Pods_MRCoreDataManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRCoreDataManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67A582116897EAF1B30F12E4 /* Pods_MRCoreDataManagerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				8454DA1B1EDFEBD000162E21 /* MRCoreDataManagerDemo */,
 				8454DA1A1EDFEBD000162E21 /* Products */,
+				BDD55E052E71C5079E803115 /* Pods */,
+				FAE5C17217AD25A8C577ADA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = MRCoreDataManagerDemo;
 			sourceTree = "<group>";
 		};
+		BDD55E052E71C5079E803115 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2736AC7673FC6442B918CA0 /* Pods-MRCoreDataManagerDemo.debug.xcconfig */,
+				1BA981DDFF10B96F425925F7 /* Pods-MRCoreDataManagerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FAE5C17217AD25A8C577ADA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A5D7CE963B5F7F389BC0B /* Pods_MRCoreDataManagerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8454DA2E1EDFEBD000162E21 /* Build configuration list for PBXNativeTarget "MRCoreDataManagerDemo" */;
 			buildPhases = (
+				30003C6AF7F0E0E1BD47AC00 /* [CP] Check Pods Manifest.lock */,
 				8454DA151EDFEBD000162E21 /* Sources */,
 				8454DA161EDFEBD000162E21 /* Frameworks */,
 				8454DA171EDFEBD000162E21 /* Resources */,
+				38BE1288134BB4D9FF94BA84 /* [CP] Embed Pods Frameworks */,
+				5269348A242D08A8C512A6ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30003C6AF7F0E0E1BD47AC00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		38BE1288134BB4D9FF94BA84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRCoreDataManagerDemo/Pods-MRCoreDataManagerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5269348A242D08A8C512A6ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRCoreDataManagerDemo/Pods-MRCoreDataManagerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8454DA151EDFEBD000162E21 /* Sources */ = {
@@ -262,6 +337,7 @@
 		};
 		8454DA2F1EDFEBD000162E21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2736AC7673FC6442B918CA0 /* Pods-MRCoreDataManagerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MRCoreDataManagerDemo/Info.plist;
@@ -274,6 +350,7 @@
 		};
 		8454DA301EDFEBD000162E21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BA981DDFF10B96F425925F7 /* Pods-MRCoreDataManagerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MRCoreDataManagerDemo/Info.plist;

@@ -1,0 +1,16 @@
+PODS:
+  - MRCoreDataManager (1.0.0)
+
+DEPENDENCIES:
+  - MRCoreDataManager (from `../`)
+
+EXTERNAL SOURCES:
+  MRCoreDataManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MRCoreDataManager: 115f2d8635aa1b36c9c93850acbb8815b5267109
+
+PODFILE CHECKSUM: 0b1106b5af45ae6b4fd9fa962acb4ce26609e0ca
+
+COCOAPODS: 1.2.1

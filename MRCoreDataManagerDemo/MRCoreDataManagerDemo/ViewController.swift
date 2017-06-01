@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MRCoreDataManager
 
 class ViewController: UIViewController {
 

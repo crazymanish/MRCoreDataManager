@@ -1,0 +1,23 @@
+{
+  "name": "MRCoreDataManager",
+  "version": "1.0.0",
+  "summary": "A framework to easily perform coredata operations. i.e Add, Fetch, Update, Delete.",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "authors": "Manish Rathi - manishrathi19902013@gmail.com",
+  "license": {
+    "type": "Manish",
+    "text": "                        © Manish Rathi, 2017. All rights reserved.\n"
+  },
+  "homepage": "https://github.com/crazymanish/MRCoreDataManager",
+  "social_media_url": "https://github.com/crazymanish",
+  "source": {
+    "git": "https://github.com/crazymanish/MRCoreDataManager",
+    "tag": "1.0.0"
+  },
+  "source_files": [
+    "Source/MRCoreDataManager/MRCoreDataManager/**/*.{h,swift}"
+  ],
+  "requires_arc": true
+}

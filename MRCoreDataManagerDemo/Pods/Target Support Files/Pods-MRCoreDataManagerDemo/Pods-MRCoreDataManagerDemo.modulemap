@@ -1,0 +1,6 @@
+framework module Pods_MRCoreDataManagerDemo {
+  umbrella header "Pods-MRCoreDataManagerDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

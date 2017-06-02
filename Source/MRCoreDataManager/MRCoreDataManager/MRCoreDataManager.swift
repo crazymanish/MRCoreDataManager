@@ -64,10 +64,13 @@ public class MRCoreDataManager {
      *
      *  @since 1.0.0
      */
-    public func addDataForEntityName(_ entityName: String, entityData: [String: Any], instantSave: Bool = false) -> NSManagedObject {
-     
-        //TODO: Implement ADD Functioanlity
-        return NSManagedObject() // This is temp line, just to avoid compile error.
+    @discardableResult
+    public func addDataForEntityName(_ entityName: String, entityData: [String: Any], instantSave: Bool = false) -> NSManagedObject? {
+        let managedObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: (persistentContainer?.viewContext)!)
+        if updateManagedObject(managedObject, entityData: entityData) {
+            return managedObject
+        }
+        return nil
     }
     
     /**
@@ -75,10 +78,19 @@ public class MRCoreDataManager {
      *
      *  @since 1.0.0
      */
-    public func dataForEntityName(_ entityName: String, predicate: NSPredicate? = nil) -> [NSManagedObject] {
-        
-        //TODO: Implement GET Functioanlity
-        return []   // This is temp line, just to avoid compile error.
+    @discardableResult
+    public func fetchDataForEntityName(_ entityName: String, predicate: NSPredicate? = nil) -> [NSManagedObject]? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.predicate = predicate
+        fetchRequest.resultType = .managedObjectResultType
+        do {
+            let fetchResult = try persistentContainer?.viewContext.fetch(fetchRequest)
+            return fetchResult as? [NSManagedObject]
+        } catch {
+            let nserror = error as NSError
+            print("fetchRequest -> Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        return nil
     }
     
     /**
@@ -88,10 +100,16 @@ public class MRCoreDataManager {
      *
      *  @since 1.0.0
      */
+    @discardableResult
     public func updateManagedObject(_ object: NSManagedObject, entityData: [String: Any], instantSave: Bool = false) -> Bool {
-        
-        //TODO: Implement UPDATE Functioanlity
-        return true   // This is temp line, just to avoid compile error.
+        let attributes = object.entity.attributesByName
+        let keys = Array(attributes.keys)
+        for index in 0..<keys.count {
+            let key = keys[index]
+            let value = entityData[key]
+            object.setValue(value, forKey: key)
+        }
+        return instantSave ? saveContext() : true
     }
 
     /**
@@ -101,10 +119,32 @@ public class MRCoreDataManager {
      *
      *  @since 1.0.0
      */
+    @discardableResult
     public func deleteManagedObject(_ object: NSManagedObject, instantSave: Bool = false) -> Bool {
-        
-        //TODO: Implement DELETE Functioanlity
-        return true   // This is temp line, just to avoid compile error.
+        persistentContainer?.viewContext.delete(object)
+        return instantSave ? saveContext() : true
+    }
+    
+    /**
+     *  Get EntityData with EntityName.
+     *
+     *  @since 1.0.0
+     */
+    @discardableResult
+    public func deleteAllManagedObjectForEntityName(_ entityName: String, predicate: NSPredicate? = nil, instantSave: Bool = false) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.predicate = predicate
+        fetchRequest.resultType = .managedObjectResultType
+        do {
+            let fetchResult = try persistentContainer?.viewContext.fetch(fetchRequest) as? [NSManagedObject]
+            for managedObject in fetchResult ?? [] {
+                deleteManagedObject(managedObject)
+            }
+        } catch {
+            let nserror = error as NSError
+            print("deleteAllRequest -> Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        return instantSave ? saveContext() : true
     }
     
     /**
@@ -112,15 +152,18 @@ public class MRCoreDataManager {
      *
      *  @since 1.0.0
      */
-    public func saveContext () {
+    @discardableResult
+    public func saveContext () -> Bool {
         let context = persistentContainer?.viewContext
         if context?.hasChanges ?? false {
             do {
                 try context?.save()
+                return true
             } catch {
                 let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("saveContext -> Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+        return false
     }
 }
